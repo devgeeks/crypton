@@ -32,10 +32,6 @@ var app = process.app = module.exports = express();
 app.log = require('./lib/log');
 app.config = require('./lib/config');
 app.datastore = require('./lib/storage');
-/*jslint camelcase: false*/
-app.id_translator = require('id_translator')
-    .load_id_translator(app.config.id_translator.key_file);
-/*jslint camelcase: true*/
 
 app.log('info', 'configuring server');
 

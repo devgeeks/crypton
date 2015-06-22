@@ -25,7 +25,6 @@
     "cryptojs": "2.5.x",
     "express": "3.5.x",
     "forever": "^0.11.1",
-    "id_translator": "https://github.com/alanfairless/id_translator/tarball/master",
     "lusca": "1.0.x",
     "node-uuid": "1.4.x",
     "pg": "4.3.x",
