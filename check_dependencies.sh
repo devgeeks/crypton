@@ -43,12 +43,12 @@ else
   exit 1;
 fi
 
-NODE_VERSION="$($NODECMD --version | grep -o "0.10.")"
-if [ "$NODE_VERSION" = "0.10."  ]; then
-  echo "Found node 0.10.x..."
+NODE_VERSION="$($NODECMD --version | grep -o "0.12.")"
+if [ "$NODE_VERSION" = "0.12."  ]; then
+  echo "Found node 0.12.x..."
 else 
-  echo "Node.js 0.10.x is required for Crypton"
-  echo "Please install Node.js 0.10.x"
+  echo "Node.js 0.12.x is required for Crypton"
+  echo "Please install Node.js 0.12.x"
   exit 1;
 fi
 
@@ -61,11 +61,11 @@ else
   exit 1;
 fi
 
-REDIS_VERSION=$(redis-server --version | grep -o -E "2\.6|2\.8" | wc -c | awk {'print $1'})
+REDIS_VERSION=$(redis-server --version | grep -o -E "2\.6|2\.8|3\.0" | wc -c | awk {'print $1'})
 if [ "$REDIS_VERSION" -ne "0"  ]; then
   echo "Found supported redis version..."
 else 
-  echo "Redis 2.6.x or 2.8.x are required for Crypton"
+  echo "Redis 2.6.x, 2.8.x or 3.0 are required for Crypton"
   echo "You have: `redis-server --version`"
   exit 1;
 fi
