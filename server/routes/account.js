@@ -62,7 +62,7 @@ app.post('/account/:username', function (req, res) {
 
   var account = new Account();
 
-  account.get(req.params.username, function (err) {
+  account.getById(req.session.accountId, function (err) {
     if (err) {
       app.log('debug', 'could not get account for ' + req.params.username);
       res.send({
